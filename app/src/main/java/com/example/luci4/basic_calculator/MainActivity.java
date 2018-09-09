@@ -109,28 +109,35 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                text.setText(text.getText().toString() + "+" );
+                if (!text.getText().toString().matches(""))
+                    text.setText(text.getText().toString() + "+" );
             }
         });
 
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                text.setText(text.getText().toString() + "-" );
+
+                if (!text.getText().toString().matches(""))
+                    text.setText(text.getText().toString() + "-" );
             }
         });
 
         mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                text.setText(text.getText().toString() + "*" );
+
+                if (!text.getText().toString().matches(""))
+                    text.setText(text.getText().toString() + "*" );
             }
         });
 
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                text.setText(text.getText().toString() + "/" );
+
+                if (!text.getText().toString().matches(""))
+                    text.setText(text.getText().toString() + "/" );
             }
         });
 
@@ -144,13 +151,15 @@ public class MainActivity extends AppCompatActivity {
         equals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String temp = text.getText().toString();
-                if(temp!=null){
+                if (!temp.matches("")) {
                     valueCalculation(temp);
                 }
+                else
+                    text.setText("");
             }
         });
-
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
